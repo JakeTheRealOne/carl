@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f1e6; /* beige doux */
+  color: #222;
+}
+
+.main-title {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #fff5dd;
+  color: #5d4632;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #fffaf3;
+  border: 1px solid #e5e1d8;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.chat-header {
+  background-color: #f3e8d9;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd0ba;
+  color: #4d3c2b;
+}
+
+.chat-log {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.chat-message {
+  margin-bottom: 12px;
+}
+
+.chat-message.user {
+  text-align: right;
+  color: #1a73e8;
+}
+
+.chat-message.bot {
+  text-align: left;
+  color: #222;
+}
+
+.chat-input-container {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  padding: 12px;
+  background-color: #fdf8f0;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #155dc1;
+}
+
+/* Propositions de phrases */
+.suggestions {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background-color: #fffaf3;
+  border-top: 1px solid #e5e1d8;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.suggestion {
+  background-color: #e6dfcc;
+  color: #4b3928;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.suggestion:hover {
+  background-color: #d8cfb8;
+}
+/* Page d'accueil */
+.home-container {
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.main-button {
+  padding: 14px 28px;
+  font-size: 18px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.main-button:hover {
+  background-color: #155dc1;
+}
+
+.examples {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.examples button {
+  background-color: #e6dfcc;
+  color: #4b3928;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.examples button:hover {
+  background-color: #d8cfb8;
+}

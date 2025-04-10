@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil ChatBot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="main-title">Bienvenue dans le ChatBot</header>
+
+  <div class="home-container">
+    <button class="main-button" onclick="goToChat()">J'ai une question</button>
+
+    <div class="examples">
+      <button onclick="goToChat('Comment renouveler ce document ?')">Comment renouveler un document (carte d'identité, passeport,...) ?</button>       
+      <button onclick="goToChat('J\'aimerais demander un certificat de ..., comment faire ?')">J'aimerais demander un certificat (naissance, mariage, décès,...), comment faire ?</button>    
+      <button onclick="goToChat('Quels documents sont ils nécessaires de mettre à jour lorsque j\'ai 18 ans ?')">Quels documents sont ils nécessaires de mettre à jour lorsque j'ai 18 ans</button>
+    </div>
+  </div>
+
+  <script>
+    function goToChat(phrase = '') {
+      window.location.href = `chat.html?phrase=${encodeURIComponent(phrase)}`;
+    }
+  </script>
+</body>
+</html>
+

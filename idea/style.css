@@ -1,0 +1,462 @@
+@font-face {
+  font-family: 'ChiasseRegular';
+  src: url('../res/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 550;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ChiasseBold';
+  src: url('../res/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nf';
+  src: url("../res/SymbolsNerdFont-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  color: #EC5092;
+}
+
+* {
+  font-family: "ChiasseRegular", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.container {
+  position: absolute;
+  top: 45vh;
+  left: 50vw;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  z-index: 1;
+  cursor: pointer;
+  /* remove scale hover to avoid layout issues */
+  /* transition: transform 0.2s ease; */
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.small-center {
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #EC5092;
+  transform: translate(-50%, -50%);
+  transition: top 0.3s ease, left 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+  /* Ensure the small circle stays in front */
+}
+
+
+.north {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.north-east {
+  top: 12%;
+  right: 12%;
+}
+
+.east {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.south-east {
+  bottom: 12%;
+  right: 12%;
+}
+
+.south {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.south-west {
+  bottom: 12%;
+  left: 12%;
+}
+
+.west {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.north-west {
+  top: 12%;
+  left: 12%;
+}
+
+.top-text {
+  position: fixed;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  display: none;
+  z-index: 999;
+}
+
+header.main-title {
+  padding: 20px;
+  font-size: 28px;
+  background-color: #f0f0f0;
+  color: #333;
+  flex-shrink: 0;
+  /* Empêche le titre de rétrécir */
+  white-space: nowrap;
+  /* Empêche le texte de se couper */
+}
+
+.chat-container {
+  flex-grow: 1;
+  /* Prendre toute la place restante */
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+  /* Limiter la largeur maximale */
+  margin: 20px auto;
+  /* Centrer la boîte */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 87vh;
+  /* Prend presque toute la hauteur de la fenêtre */
+  justify-content: flex-start;
+  /* Aligner le contenu au début */
+}
+
+.chat-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.chat-log {
+  overflow-y: auto;
+  /* max-height: 300px; */
+  margin-bottom: 15px;
+  padding-right: 10px;
+  flex-grow: 1;
+  /* Permet à la zone de discussion de prendre l'espace restant */
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  /* Pousse la barre d'entrée tout en bas */
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../res/Logo_of_charleroi.svg");
+  border-radius: 50%;
+}
+
+
+
+.title {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .title {
+    display: none;
+  }
+}
+
+.title {
+  position: relative;
+  left: 30%;
+  font-size: 1.6em;
+  align-self: flex-start;
+  font-family: 'ChiasseBold', sans-serif;
+}
+
+
+
+
+
+.login-button {
+
+
+  background-color: #4a90e2;
+
+
+  color: white;
+
+
+  border: none;
+
+
+  padding: 8px 16px;
+
+
+  border-radius: 8px;
+
+
+  cursor: pointer;
+
+
+  font-weight: bold;
+
+
+}
+
+.login-button:hover {
+
+
+  background-color: #357abd;
+
+
+}
+
+.chat-message {
+
+
+
+  margin: 10px 0;
+
+
+  padding: 10px 15px;
+
+
+  border-radius: 8px;
+
+
+  max-width: 80%;
+
+
+  word-wrap: break-word;
+
+
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+.chat-message.user {
+
+
+  background-color: #333;
+
+
+  color: white;
+
+
+  align-self: flex-end;
+
+
+  margin-left: auto;
+
+
+}
+
+
+.chat-message.error {
+  color: #ff7a7a;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+
+.chat-message.bot {
+  background-color: #555;
+  color: white;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.svg-logo {
+
+  height: 30px;
+  /* Prend la moitié de la hauteur du header */
+  /* Optionnel : centrer horizontalement et verticalement */
+  position: relative;
+  /*top: 50%; /* (100% - 50%) / 2 pour centrer verticalement */
+  left: 25%;
+}
+
+.ia-description {
+  margin-top: 68vh;
+  text-align: center;
+  font-size: 18px;
+  color: #474444;
+  padding: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.passport-btn {
+  background-color: #2a9d8f;
+  /* Rouge */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.passport-btn:hover {
+  background-color: #4c20a3;
+}
+
+.id-btn {
+  background-color: #7233df;
+  /* Rouge */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.id-btn:hover {
+  background-color: #321c84;
+}
+
+.signal-btn {
+  background-color: #df3358;
+  /* Rouge */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signal-btn:hover {
+  background-color: #c51a3f;
+}
+
+.calendrier-btn {
+  background-color: #df33a9;
+  /* Rouge */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.calendrier-btn:hover {
+  background-color: #c51a92;
+}
+
+.raw-btn {
+  background-color: #acadaf;
+  /* Rouge */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.raw-btn:hover {
+  background-color: #8b8a90;
+}
+
+ul, ol {
+  padding-left: 1em; /* Ajuste l'espace à gauche pour les listes */
+}

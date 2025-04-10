@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coach Carl</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-title">
+      <img src="../res/logo.svg" alt="logo" class="svg-logo" />
+      <div class="title">ARL</div>
+    </div>
+    <button class="login-button">Connexion</button>
+  </header>
+
+  <div class="layout">
+    <div class="chat-container">
+      <div class="chat-header">Discussion avec Carl</div>
+      <div id="chat-log" class="chat-log"></div>
+      <div class="chat-input-container">
+        <input type="text" id="user-input" placeholder="Écris quelque chose..." />
+        <button onclick="sendMessage()">Envoyer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // const markdownText = document.getElementById('source-markdown').textContent;
+    // const htmlContent = marked.parse(markdownText);
+    // document.getElementById('output-html').innerHTML = htmlContent;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const phrase = urlParams.get('phrase');
+    if (phrase) {
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('user-input').value = phrase;
+      });
+    }
+  </script>
+</body>
+
+</html>

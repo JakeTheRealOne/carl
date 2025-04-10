@@ -2,11 +2,11 @@
 
 ## Description
 
-Carl est un chatbot intelligent dont le but est de répondre aux questions des citoyens sur les démarches administratives, les contacts, les lieux et les infos en tout genre de la ville de Charleroi
+Carl est un chatbot intelligent dont le but est de répondre aux questions des citoyens sur les démarches administratives, les contacts, les lieux et les informations en tout genre de la ville de Charleroi.
 
 ## Contexte
 
-Ce projet est issus du hackaton [CitizensOfWallonia](https://www.citizensofwallonia.be/) 2025
+Ce projet est issu du hackaton [CitizensOfWallonia](https://www.citizensofwallonia.be/) 2025.
 
 ## Auteurs
 
@@ -31,7 +31,7 @@ Attention, ce modèle observe certaines [limitations materielles](https://ollama
 
 ## Lancer le serveur
 
-Pour lancer le serveur qui hébergera le LLM
+Pour lancer le serveur qui héberge le LLM
 
 ```shell
 ollama serve &
@@ -40,7 +40,7 @@ python3 src/main.py
 
 ## Lancer un client
 
-La page web de Carl est disponible [ici](idea/index.html) 
+La page web de Carl est disponible [ici](idea/index.html).
 
 ## Dépendences
 
